@@ -22,13 +22,13 @@
     	</div>	
     </header>
 
-	<form>
+	<form onsubmit="validarFormulario()" enctype="multipart/form-data" th:action="@{/cliente/editarCliente/{id}}" th:object="${cliente}" method="post">
 	    <div class="foto-perfil">
 	        <h2>Dados Pessoais</h2>
 	        <img src="images/advogado-1.jpg">
 	    </div>
 	    <div class="edite-image">
-	        <button><a href="#">Editar</a> </button>
+	        <button type="submit">Editar</button>
 	    </div>
 	    <div class="input-group">
 	        <div class="campo-top">

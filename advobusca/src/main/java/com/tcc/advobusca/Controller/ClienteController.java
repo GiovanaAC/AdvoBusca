@@ -143,6 +143,28 @@ public class ClienteController {
 	   }
 	}
 
-	
-	
+	@PostMapping("/editarCliente/{id}")
+	public String postAtualizar(
+		@PathVariable("id") Long id,
+		@ModelAttribute("cliente") Cliente cliente, ModelMap model, HttpSession session) {
+		
+		Cliente clienteExistente = clienteService.findById(id);
+		
+		if (clienteExistente == null) {
+			serverMessage = "Usuário não encontrado";
+			return "erro"; // ou qualquer outra página de erro
+		}
+		
+		// Atualize os campos do cliente existente com os novos valores
+		clienteExistente.setNome(cliente.getNome());
+		clienteExistente.setEmail(cliente.getEmail());
+		// Adicione outras atualizações de campos, se necessário
+		
+		clienteService.update(clienteExistente); // Suponha que você tenha um método de serviço para atualizar
+		
+		serverMessage = "Usuário atualizado com sucesso!!!";
+		
+		return "redirect:/cliente/my-account"; // Redirecione para a página de destino após a atualização
+	}
+
 }
