@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/Logo_atualizada_uni_branca.png">
+    </meta>
+
+    <link rel="stylesheet" href="/css/my-account-adv.css">
+    <title>AdvoBusca</title>
+</head>
+
+<body>
+		<div th:if="${session.advogado != null}"> 
+    		<div th:replace="topMenu/topMenuLogadoAdvogado :: header"></div>
+    	</div>
+
+    <div class="foto-perfil">
+        <h2>Dados Pessoais</h2>
+        <img th:if="${foto != null}" th:src="@{'/session.advogado/showImage/' + session.advogado.id}" th:alt="Foto do session.advogado" />
+		<img th:if="${foto == null}" th:src="${noImage}" />
+    </div>
+    <div class="edite-image">
+        <button><a href="#">Editar</a> </button>
+    </div>
+    <div class="input-group">
+    <div class="campo-top">
+        <div class="input-box">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" name="nome"  th:value="${session.advogado.nome}">
+        </div>
+
+        <div class="input-box">
+            <label for="rg">RG</label>
+            <input id="rg" type="text" name="rg" placeholder="Digite seu rg sem caracteres especiais" th:value="${session.advogado.rg}">
+        </div>
+        <div class="input-box">
+            <label for="cpf">CPF</label>
+            <input id="cpf" type="text" name="cpf" placeholder="XXX.XXX.XXX-XX" th:value="${session.advogado.cpf}">
+        </div>
+    </div>
+    <div class="campo-meio">
+        <div class="input-box">
+            <label for="email">Email</label>
+            <input id="email" type="text" name="email" placeholder="example123@example.com" th:value="${session.advogado.email}">
+        </div>
+
+        <div class="input-box">
+            <label for="senha">Senha</label>
+            <input id="senha" type="password" name="senha" placeholder="****************" th:value="${session.advogado.senha}">
+        </div>
+        <div class="input-box">
+            <label for="telefone_adv">Celular</label>
+            <input id="telefone_adv" type="tel" name="telefone_adv" placeholder="(xx) xxxx-xxxx" th:value="${session.advogado.telefoneAdv}">
+        </div>
+    </div>
+    <div class="campo-down">
+        <div class="input-box">
+            <label for="cod_oab">COD OAB</label>
+            <input id="cod_oab" type="text" name="cod_oab" placeholder="example123@example.com" th:value="${session.advogado.codOab}">
+        </div>
+        
+        <div class="input-box">
+            <label for="valor">Valor Consulta</label>
+            <input id="valor" type="text" name="valor" placeholder="****************" th:value="${session.advogado.valor}">
+        </div>
+    </div>
+    <div class="campo-down">
+        <div class="input-box">
+            <label for="cep">CEP Escritório</label>
+            <input id="cep" type="text" name="cep" placeholder="example123@example.com" th:value="${session.advogado.cep}">
+        </div>
+
+        <div class="input-box">
+            <label for="rua">Rua Escritório</label>
+            <input id="rua" type="text" name="rua" placeholder="****************" th:value="${session.advogado.rua}">
+        </div>
+        <div class="input-box">
+            <label for="bairro">Bairro</label>
+            <input id="bairro" type="text" name="bairro" placeholder="(xx) xxxx-xxxx" th:value="${session.advogado.bairro}">
+        </div>
+    </div>
+    <div class="campo-down">
+        <div class="input-box">
+            <label for="cidade">Cidade</label>
+            <input id="cidade" type="text" name="cidade" placeholder="example123@example.com" th:value="${session.advogado.cidade}">
+        </div>
+        
+        <div class="input-box">
+            <label for="numero">Número</label>
+            <input id="numero" type="text" name="numero" placeholder="****************" th:value="${session.advogado.numero}">
+        </div>
+    </div>
+</div>
+
+            
+        <footer>
+            <br>
+            <div class="container">
+                <ul>
+                    <div class="imagem-logo-footer">
+                        <img src="/images/Logo_atualizada_Right_branco.png" alt="imagem-logo-footer">
+                    </div>
+                </ul>
+                <!--fim da primeira ul-->
+                <ul>
+                    <h3>Acesse Aqui</h3>
+                    <a href="">Areas</a><br>
+                    <a href="">Cadastre-se</a><br>
+                    <a href="">Login</a><br>
+                </ul>
+                <!--fim da segunda ul-->
+                <ul>
+                    <h3>Informações <br> Corporativas</h3>
+                    <a href="">Home</a><br>
+                    <a href="">Sobre nós</a><br>
+                    <a href="">Valores</a><br>
+                </ul>
+                <!--fim da terceira ul-->
+                <ul class="icons">
+                    <h3>Siga-nos</h3>
+                    <img style="cursor: pointer" id="imgFacebook" src="/images/107140_gray_circle_facebook_icon.png" alt="">
+                    <img style="cursor: pointer" id="imgInstagram" src="/images/107138_gray_circle_instagram_icon.png" alt="">
+                    <img style="cursor: pointer" id="imgTwitter" src="/images/107135_gray_twitter_circle_icon.png" alt="">
+                </ul>
+                <!--fim da quarta ul-->
+            </div>
+        </footer>
+</body>

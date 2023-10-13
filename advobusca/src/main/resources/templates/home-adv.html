@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/Logo_atualizada_uni_branca.png">
+    
+    </meta>
+    
+    <link rel="stylesheet" href="/css/style-adv.css">
+    <title>AdvoBusca</title>
+</head>
+<body>
+    
+    <header>
+		<div th:if="${session.advogado != null}"> 
+    		<div th:replace="topMenu/topMenuLogadoAdvogado :: header"></div>
+    	</div>	
+    	<div th:if="${session.advogado == null}"> 
+    		<div th:replace="topMenu/topMenudeslogado :: header"></div>
+    	</div>	
+    </header>
+
+    <main>
+
+        <div class="options">
+
+            <div class="title_options">
+                <h1>Acesse nosso sistema</h1>
+            </div>
+
+            <div class="itens_options">
+
+                <div class="site_option">
+                    <a href="/Front/login.html">
+                        <div class="img_site_option">
+                            <img src="images/icon-pc.png" alt="">
+                        </div>
+
+                        <div class="title_site_option">
+                            <h4>Procure advogados aqui na internet</h4>
+                        </div>
+
+                        <div class="text_site_option">
+                            <h5>Acesse nosso sistema e procure o advogado <br>
+                                ideal para sua causa, de maneira rápida e fácil!</h5>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="app_option">
+                    <a href="">
+                        <div class="img_app_option">
+                            <img src="images/icon-cell.png" alt="">
+                        </div>
+    
+                        <div class="title_app_option">
+                            <h4>Procure advogados no nosso app</h4>
+                        </div>
+    
+                        <div class="text_app_option">
+                            <h5>Baixe o nosso app e procure o melhor advogado <br>
+                                ideal para sua causa, de maneira rápida e fácil!</h5>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="sobre-nos" id="sobre-nos">
+
+            <div class="title-sobre-nos">
+                <h1>Sobre <br> Nós:</h1>
+            </div>
+
+            <div class="text-sobre-nos">
+                <h3>Com o objetivo de versatilizar a contratação de um advogado, 
+                o sistema <br> Advobusca procura ampliar a natureza jurídica para 
+                plataformas online. Assim, <br>facilitando ao cliente a busca de um
+                advogado ideal para o seu caso e <br> a preservação de seus direitos,
+                para que desse modo, possa existir uma sociedade onde <br>há justiça e tecnologia.</h3>
+            </div>
+
+        </div>
+
+
+        <div class="valores" id="nosso-valores">
+
+            <div class="title-valores" >
+                <h1>Nossos Valores</h1>
+            </div>
+            
+            <div class="valores-up">
+
+                <div class="consumidor">
+                    <img src="/Front/images/icon-consumer.svg" alt="">
+                    <div class="title-valores-consumidor">
+                        <h4>Consumidor</h4>
+                    </div>
+                    <div class="text-valores-consumidor">
+                        <h5>Procuramos transparência sempre para criarmos <br>
+                            vínculos com nossos usuários, para que sejamos <br>
+                             referência quando o assunto é credibilidade.</h5>
+                    </div>
+                </div>
+
+                <div class="negocios">
+                    <img src="/Front/images/icon-business.svg" alt="">
+                    <div class="title-valores-negocios">
+                        <h4>negocios</h4>
+                    </div>
+                    <div class="text-valores-negocios">
+                        <h5>Desenvolver e manter relações de credibilidade <br> e 
+                            reciprocidade com clientes e fornecedores.</h5>
+                    </div>
+                </div>
+    
+                <div class="pessoas">
+                    <img src="/Front/images/icon-people.svg" alt="">
+                    <div class="title-valores-pessoas">
+                        <h4>Pessoas</h4>
+                    </div>
+                    <div class="text-valores-pessoas">
+                        <h5>Promover o equilíbrio pessoal e profissional <br>
+                        e valorizar a família.</h5>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="valores-down">
+
+                <div class="comunicação">
+                    <img src="/Front/images/icon-comunication.svg" alt="">
+                    <div class="title-valores-comunicação">
+                        <h4>Comunicação</h4>
+                    </div>
+                    <div class="text-valores-comunicação">
+                        <h5>Garantir credibilidade e visibilidade a marca AdvoBusca. <br>
+                        Valorizar a comunicação direta, 
+                        transparente, constante <br>
+                        e rápida.</h5>
+                    </div>
+                </div>
+
+                <div class="inovacao">
+                    <img src="/Front/images/icon-innovation.svg" alt="">
+                    <div class="title-valores-inovacao">
+                        <h4>Inovacao</h4>
+                    </div>
+                    <div class="text-valores-inovacao">
+                        <h5>Incentivar e valorizar a criatividade e a <br> iniciativa dos 
+                            colaboradores. Ser ágil, antecipar-se à <br> concorrência
+                            e ao mercado.</h5>
+                    </div>
+                </div>
+    
+                <div class="governanca">
+                    <img src="/Front/images/icon-gover.svg" alt="">
+                    <div class="title-valores-governanca">
+                        <h4>Governança</h4>
+                    </div>
+                    <div class="text-valores-governanca">
+                        <h5>Atuar com honestidade, ética, lealdade 
+                        e justiça. <br> Fazer prevalecer o compromisso com
+                        os objetivos da empresa <br> e com a sustentabilidade do negócio.</h5>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </main>
+
+
+
+    <footer>
+
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');
+html{
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+a{
+    text-decoration: none;
+}
+
+header{
+    background-color: rgb(0, 0, 133);
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999px;
+    box-shadow: rgba(255, 255, 255, 0.178) 0px 19px 38px, 
+    rgba(255, 255, 255, 0.082) 0px 15px 12px;
+}
+
+.class-header{
+    display: flex;
+}
+.class-header a{
+    color: white;
+}
+
+.logo-class-header img{
+    width: 200px;
+    margin: 10px;
+}
+
+.item1-class-header{
+    margin-top: 2px;
+    margin-left: 12%;
+}
+
+.item2-class-header{
+    margin-top: 2px;
+    margin-left: 10%;
+}
+.item3-class-header{
+    margin-top: 2px;
+    margin-left: 10%;
+}
+
+.signup-class-header button{
+    cursor:pointer;
+}
+.signup-class-header{
+    margin-top: 1.3%;
+    margin-left: 15%;
+}
+.signup-class-header button{
+    height: 35px;
+    width: 110px;
+    background-color: rgb(0, 0, 133);
+    border-color: white;
+    color: white;
+    border-style:ridge;
+    border-radius: 5px;
+}
+.signup-class-header button:hover{
+    background-color: white;
+    border-color: rgb(0, 0, 133);
+    border-style: ridge;
+    color: rgb(0, 0, 133);
+    font-size: 15px;
+    text-decoration:wavy;
+    border-radius: 5px;
+    box-shadow: rgba(255, 255, 255, 0.363) 0px 54px 55px, 
+    rgba(255, 255, 255, 0.247) 0px -12px 30px, rgba(255, 255, 255, 0.274)
+     0px 4px 6px, rgba(255, 255, 255, 0.308) 0px 12px 13px,
+    rgba(255, 255, 255, 0.178) 0px -3px 5px;
+}
+
+
+.login-class-header button{
+    cursor:pointer;
+}
+.login-class-header{
+    margin-top: 1.6%;
+    margin-left: 1%;
+}
+.login-class-header button{
+    height: 30px;
+    width: 96px;
+    background-color: white;
+    border-color: rgb(0, 0, 133);
+    border-style: ridge;
+    color: rgb(0, 0, 133);
+    font-size: 15px;
+    text-decoration:wavy;
+    border-radius: 5px;
+}
+.login-class-header button:hover{
+    background-color: rgb(0, 0, 133);
+    border-color: white;
+    color: white;
+    border-style:ridge;
+    border-radius: 5px;
+        box-shadow: rgba(255, 255, 255, 0.459) 0px 54px 55px, 
+    rgba(255, 255, 255, 0.404) 0px -12px 30px, rgba(255, 255, 255, 0.479)
+     0px 4px 6px, rgba(255, 255, 255, 0.418) 0px 12px 13px,
+    rgba(255, 255, 255, 0.301) 0px -3px 5px;
+}
+
+
+.filtro{
+    margin-top: 79px;
+    display: flex;
+    background-color: #ddd;
+    position: absolute;
+    z-index: 998px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+}
+#area-do-direito{
+    -webkit-appearance: none;
+    /* Remove estilo padrão do Chrome */
+    -moz-appearance: none;
+    /* Remove estilo padrão do FireFox */
+    appearance: none;
+    /* Remove estilo padrão do FireFox*/
+    background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #eeeeee;
+    /* Imagem de fundo (Seta) */
+    background-position: 218px center;
+    /*Posição da imagem do background*/
+    width: 250px;
+    /* Tamanho do select, maior que o tamanho da div "div-select" */
+    height: 30px;
+    /* Altura do select, importante para que tenha a mesma altura em todo os navegadores */
+    border: 1px solid #ddd;
+}
+.filtro-campo{
+    margin-left: 2%;
+    margin-top: 5px;
+}
+#valor{
+    -webkit-appearance: none;
+    /* Remove estilo padrão do Chrome */
+    -moz-appearance: none;
+    /* Remove estilo padrão do FireFox */
+    appearance: none;
+    /* Remove estilo padrão do FireFox*/
+    background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #eeeeee;
+    /* Imagem de fundo (Seta) */
+    background-position: 218px center;
+    /*Posição da imagem do background*/
+    width: 250px;
+    /* Tamanho do select, maior que o tamanho da div "div-select" */
+    height: 30px;
+    /* Altura do select, importante para que tenha a mesma altura em todo os navegadores */
+    border: 1px solid #ddd;
+}
+.filtro-campo-valor{
+    margin-left: 5%;
+    margin-top: 5px;
+}
+.filtro-campo-nome{
+    margin-left: 20%;
+    margin-top: 5px;
+}
+.filtro-campo-nome input{
+    background-color: #ddd;
+    border-color: transparent;
+    background-color: #e6e6e6;
+}
+.filtro button{
+    margin-left: 3%;
+    height: 25px;
+    margin-top: 7px;
+    background-color: #ddd;
+    border-color: #e6e6e6;
+    border-style: ridge;
+    cursor: pointer;
+}
+
+.list img{
+    height: 120px;
+    border-radius: 120px;
+}
+.list{
+    margin-top: 8%;
+    margin-left: 17%;
+}
+.list a{
+    color: black;
+}
+
+.advogado {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.158);
+  width: 970px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  padding: 40px;
+  margin-bottom: 10px;
+}
+
+.imagem {
+  margin-left: 10px;
+}
+
+.dados {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
+.nome {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.estrelas {
+  margin-bottom: 5px;
+}
+
+.endereco {
+  margin-bottom: 5px;
+}
+
+.preco {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20%;
+}
+
+.final{
+   flex-direction: column;
+}
+
+
+.perfil {
+  margin-top: 15px;
+  margin-left: 10%;
+}
+.perfil{
+    height: 40px;
+    cursor: pointer;
+    width: 115px;
+    color: rgb(0, 0, 133);
+    background-color: white;
+    border-color: rgba(161, 151, 255, 0.096);
+}
+.perfil:hover{
+    background-color: white;
+    border-color: rgb(108, 181, 255);
+    border-style: ridge;
+    box-shadow: rgb(138, 196, 255) 0px 0px 12px;
+}
+#imgFacebook{
+    width: 40px;
+    margin: 10px;
+}
+#imgInstagram{
+    width: 40px;
+    margin: 10px;
+}
+#imgTwitter{
+    width: 40px;
+    margin: 10px;
+}
+footer{
+    background-color: rgb(37,36,65);
+    left: 0;
+    height: auto;
+    position: absolute;
+    width: 100%;
+    margin-top: 0%;
+    bottom: -56%;
+}
+footer a{
+    text-decoration: none;
+    color: rgb(204,204,204,255);
+    display: block;
+}
+footer .container{
+    display: flex;
+    color: rgb(204,204,204,255);
+}
+footer .container ul{
+width: 25%;
+}
+footer .container img{
+    width: 200px;
+    margin: 10px;
+    padding-top: 50px;
+}
+
+
+
+

@@ -1,0 +1,55 @@
+	<header>
+	    <div class="wrapper">
+	        <div class="navbar">
+				<div class="row" style="display: contents">
+		            <div class="logo-class-header">
+		                <a href="home.html">
+		                    <img src="/images/Logo_atualizada_Right_branco.png" alt="">
+		                </a>
+		            </div>
+		        	<div class="nav_center" style="display:flex; align-items: center">
+		                    <a href="">
+		                        <h4>Nossos Valores</h4>
+		                    </a>
+		                    <a href="" style="margin-left: 90px;">
+		                        <h4>Solicitações</h4>
+		                    </a>
+		                    <a href="" style="margin-left: 90px;">
+		                        <h4>Sobre nós</h4>
+		                    </a>
+			        </div>
+		            <div class="nav_right">
+					    <ul>
+				            <li class="nr_li dd_main" id="user-icon">
+				                <img src="/images/images.png" style="border-radius: 100%;width: 45px">
+				                <div class="dd_menu" id="user-menu">
+				                    <div class="dd_left"></div>
+				                    <div class="dd_right">
+				                        <ul>
+				                            <li><a href="#">Home</a></li>
+				                            <li><a href="#">Solicitações</a></li>
+				                            <li><a th:href="@{'/advogado/minhaConta?id=' + ${session.advogado.id}}">Meu Perfil</a></li>
+				                            <li><a href="#" th:action="@{/api/sairAdvogado}">Sair</a></li>
+				                        </ul>
+				                    </div>
+				                </div>
+				            </li>
+				            <li class="nr_li">
+				                <i class="fas fa-envelope-open-text"></i>
+				            </li>
+				        </ul>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+    </header>
+<script>
+    var dd_main = document.querySelector(".dd_main");
+    var dd_right = dd_main.querySelector(".dd_right");
+
+    dd_main.addEventListener("click", function () {
+        // Altera o estilo para "display: block" quando clicado
+        dd_right.style.display = "block";
+    });
+</script>
+</html>

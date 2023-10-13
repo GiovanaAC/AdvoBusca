@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/Front/images/Logo_atualizada_uni_branca.png">
+    <link rel="stylesheet" href="list.css">
+    <script src="myscripts.js"></script>
+    <title>AdvoBusca</title>
+</head>
+<body>
+
+    <header>
+
+        <div class="class-header">
+
+            <div class="logo-class-header">
+                <a href="/Front/home.html">
+                    <img src="images/Logo_atualizada_Right_branco.png" alt="">
+                </a>
+            </div>
+
+            <div class="item1-class-header">
+                <a href="/Front/home.html">
+                    <h3>Nossos valores</h3>
+                </a>
+            </div>
+
+            <div class="item2-class-header">
+                <a href="/Front/areas.html">
+                    <h3>Áreas</h3>
+                </a>
+            </div>
+
+            <div class="item3-class-header">
+                <a href="/Front/home.html">
+                    <h3>Sobre nós</h3>
+                </a>
+            </div>
+
+            <div class="signup-class-header">
+                <a href="/Front/new-account.html">
+                <button>Se cadastre</button>
+                </a>
+            </div>
+
+            <div class="login-class-header">
+                <a href="/Front/login.html">
+                <button>Entre</button>
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+        <div class="filtro">
+            <div class="filtro-campo">
+              <label for="area-do-direito">Área do Direito:</label>
+              <select name="area-do-direito" id="area-do-direito">
+                <option value="">Selecione uma área do direito</option>
+                <option value="civil">Direito Civil</option>
+                <option value="ambiental">Direito Ambiental</option>
+                <option value="empresarial">Direito Empresarial</option>
+                <option value="digital">Direito Digital</option>
+                <option value="tributario">Direito Tributário</option>
+                <option value="trabalhista">Direito Trabalhista</option>
+                <option value="consumidor">Direito do Consumidor</option>
+                <option value="criminalista">Direito Criminalista</option>
+              </select>
+            </div>
+            <div class="filtro-campo-valor">
+              <label for="valor">Valor:</label>
+              <select name="valor" id="valor">
+                <option value="">Selecione uma faixa de valores</option>
+                <option value="0-100">Até R$ 100</option>
+                <option value="100-200">De R$ 100 a R$ 200</option>
+                <option value="200-400">De R$ 200 a R$ 400</option>
+              </select>
+            </div>
+            <div class="filtro-campo-nome">
+              <label for="pesquisa">Pesquisa por nome:</label>
+              <input type="text" id="pesquisa" name="pesquisa" placeholder="Digite o nome...">
+            </div>
+            <button id="botao-filtrar">Filtrar</button>
+          </div>
+
+        <div class="list">
+
+            <a href="profile.html">
+                <div class="advogado">
+                    <div class="imagem">
+                        <img src="images/advogado-1.jpg" alt="Foto do advogado João Silva">
+                    </div>
+                    <div class="dados">
+                        <div class="nome">João Silva</div>
+                        <div class="estrelas">★★☆☆☆</div>
+                        <div class="endereco">Avenida Italia, 35 - Carapicuiba/SP</div>
+                    </div>
+                    <div class="final">
+                        <div class="preco">R$ 230/Consulta</div>
+                        <button class="perfil"> Ver Perfil</button>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="">
+                <div class="advogado">
+                    <div class="imagem">
+                        <img src="images/advogado-2.png" alt="Foto do advogado João Silva">
+                    </div>
+                    <div class="dados">
+                        <div class="nome">Theodoro Marques</div>
+                        <div class="estrelas">★★★★☆</div>
+                        <div class="endereco">Rua A, 123 - Osasco/SP</div>
+                    </div>
+                    <div class="final">
+                        <div class="preco">R$ 200/Consulta</div>
+                        <button class="perfil">Ver Perfil</button>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="">
+                <div class="advogado">
+                    <div class="imagem">
+                        <img src="images/advogado-3.jpg" alt="Foto do advogado João Silva">
+                    </div>
+                    <div class="dados">
+                        <div class="nome">Vanessa Ferraz</div>
+                        <div class="estrelas">★★★★★</div>
+                        <div class="endereco">Rua A, 123 -  Barueri/SP</div>
+                    </div>
+                    <div class="final">
+                        <div class="preco">R$ 270/Consulta</div>
+                        <button class="perfil">Ver Perfil</button>
+                    </div>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="advogado">
+                    <div class="imagem">
+                        <img src="images/advogado-4.jpg" alt="Foto do advogado João Silva">
+                    </div>
+                    <div class="dados">
+                        <div class="nome">Ana Silva</div>
+                        <div class="estrelas">★★★☆☆</div>
+                        <div class="endereco">Rua Palmeira, 120 - Jandira/SP</div>
+                    </div>
+                    <div class="final">
+                        <div class="preco">R$ 160/Consulta</div>
+                        <button class="perfil">Ver Perfil</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+    </main>
+    <footer>
+        <div class="container">
+    <ul>
+        <div class="imagem-logo-footer">
+        <img src="images/Logo_atualizada_Right_branco.png" alt="imagem-logo-footer">
+    </div>
+    </ul>
+    <!--fim da primeira ul-->
+    <ul>
+    <h3>Acesse <br> Aqui</h3>
+    <a href="">Areas</a><br>
+    <a href="">Cadastre-se</a><br>
+    <a href="">Login</a><br>
+    </ul>
+    <!--fim da segunda ul-->
+    <ul>
+    <h3>Informações <br> Corporativas</h3>
+    <a href="">Home</a><br>
+    <a href="">Sobre nós</a><br>
+    <a href="">Valores</a><br>
+    </ul>
+    <!--fim da terceira ul-->
+    <ul class="icons">
+    <h3>Siga-nos</h3>
+    <img id="imgFacebook" src="images/107140_gray_circle_facebook_icon.png" alt="">
+    <img id="imgInstagram" src="images/107138_gray_circle_instagram_icon.png" alt="">
+    <img id="imgTwitter" src="images/107135_gray_twitter_circle_icon.png" alt="">
+    </ul>
+    <!--fim da quarta ul-->
+        </div>
+    </footer>
+    
+
+</body>
+
+    <script>
+        const botaoFiltrar = document.getElementById('botao-filtrar');
+
+        botaoFiltrar.addEventListener('click', function() {
+        const areaDoDireito = document.getElementById('area-do-direito').value;
+        const valor = document.getElementById('valor').value;
+        const pesquisa = document.getElementById('pesquisa').value;
+        
+        });
+    </script>
+
+</html>

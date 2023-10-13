@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </meta>
+    <link rel="icon" type="image/x-icon" href="/Front/images/Logo_atualizada_uni_branca.png">
+    <link rel="stylesheet" href="/css/profile.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="jquery.mask.min.js"></script>
+    <title>AdvoBusca</title>
+</head>
+<body>
+
+    <header>
+		<div th:if="${session.usuario != null}"> 
+    		<div th:replace="topMenu/topMenuLogado :: header"></div>
+    	</div>	
+    	<div th:if="${session.usuario == null}"> 
+    		<div th:replace="topMenu/topMenudeslogado :: header"></div>
+    	</div>	
+    </header>
+
+
+    <main>
+        <div class="profile-advogado">
+            <div class="top-profile">   
+                     <div class="nome-foto">
+				        <img th:src="${foto != null} ? @{${'/advogado/showImage/' + advogado.id}} : ${noImage}">
+				        <h1 th:text="${advogado.nome}"></h1>
+				    </div>   
+                <div class="modal-agendamento">
+                    <button id="btn-calendar">Agendar</button>
+                    <div id="modal-calendar" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Selecione uma data e hora</h2>
+                        <input type="datetime-local" id="datepicker">
+                        <table id="timeslots" style="display:none;">
+                        <button onclick="agendar()" id="agendar-consulta">Agendar</button>
+                        <div id="mensagem-consulta-agendada"><h2>Consulta Agendada!</h2></div> 
+                        <i class="fas fa-check"></i>   
+                        <thead>
+                            <tr>
+                            <th>Horário disponível</th>
+                            <th>Agendar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        
+                
+            <div class="info-advogado">
+                <h3>Áreas de Atuação</h3>
+                <ul>
+                    <li>Direito Civil</li>
+                    <li>Direito Trabalhista</li>
+                    <li>Direito Penal</li>
+                </ul>
+            
+                <h3>Contato</h3>
+                <ul>
+                    <li>E-mail:<h5 th:text="${advogado.email}"></h5></li>
+                    <li>Telefone: <h5 th:text="${advogado.telefoneAdv}"></h5></li>
+                </ul>
+
+            </div>
+
+            
+        </div>
+    </div>
+      </main>
+
+
+      <script>
+        function Avaliar(estrela) {
+          var url = window.location;
+          url = url.toString()
+          url = url.split("index.html");
+          url = url[0];
+      
+          var s1 = document.getElementById("s1").src;
+          var s2 = document.getElementById("s2").src;
+          var s3 = document.getElementById("s3").src;
+          var s4 = document.getElementById("s4").src;
+          var s5 = document.getElementById("s5").src;
+          var avaliacao = 0;
+      
+          if (estrela == 5){ 
+            if (s5 == url + "images/star0.webp") {
+              document.getElementById("s1").src = "images/star1.png";
+              document.getElementById("s2").src = "images/star1.png";
+              document.getElementById("s3").src = "images/star1.png";
+              document.getElementById("s4").src = "images/star1.png";
+              document.getElementById("s5").src = "images/star1.png";
+              avaliacao = 5;
+            } else {
+              document.getElementById("s1").src = "images/star1.png";
+              document.getElementById("s2").src = "images/star1.png";
+              document.getElementById("s3").src = "images/star1.png";
+              document.getElementById("s4").src = "images/star1.png";
+              document.getElementById("s5").src = "images/star1.png";
+              avaliacao = 4;
+            }
+          }
+      
+          //ESTRELA 4
+          if (estrela == 4){ 
+            if (s4 == url + "images/star0.webp") {
+              document.getElementById("s1").src = "images/star1.png";
+              document.getElementById("s2").src = "images/star1.png";
+              document.getElementById("s3").src = "images/star1.png";
+              document.getElementById("s4").src = "images/star1.png";
+              document.getElementById("s5").src = "images/star0.webp";
+              avaliacao = 4;
+            } else {
+              document.getElementById("s1").src = "images/star1.png";
+              document.getElementById("s2").src = "images/star1.png";
+              document.getElementById("s3").src = "images/star1.png";
+              document.getElementById("s4").src = "images/star1.png";
+              document.getElementById("s5").src = "images/star0.webp";
+              avaliacao = 3;
+            }
+          }
+      
+          //ESTRELA 3
+          if (estrela == 3){ 
+            if (s3 == url + "images/star0.webp") {
+              document.getElementById("s1").src = "images/star1.png";
+              document.getElementById("s2").src = "images/star1.png";
+              document.getElementById("s3").src = "images/star1.png";
+              document.getElementById("s4").src = "images/star0.webp";
+              document.getElementById("s5").src = "images/star0.webp";
+              avaliacao = 3;
+            } else {
+              document.getElementById("s1").src = "images/star1.png";
+              document.getElementById("s2").src = "images/star1.png";
+              document.getElementById("s3").src = "images/star1.png";
+              document.getElementById("s4").src = "images/star0.webp";
+              document.getElementById("s5").src = "images/star0.webp";
+              avaliacao = 2;
+            }
+          }
+      
+          //ESTRELA 2
+        if (estrela == 2){ 
+        if (s2 == url + "images/star0.webp") {
+        document.getElementById("s1").src = "images/star1.png";
+        document.getElementById("s2").src = "images/star1.png";
+        document.getElementById("s3").src = "images/star0.webp";
+        document.getElementById("s4").src = "images/star0.webp";
+        document.getElementById("s5").src = "images/star0.webp";
+        avaliacao = 2;
+        } else {
+        document.getElementById("s1").src = "images/star1.png";
+        document.getElementById("s2").src = "images/star1.png";
+        document.getElementById("s3").src = "images/star0.webp";
+        document.getElementById("s4").src = "images/star0.webp";
+        document.getElementById("s5").src = "images/star0.webp";
+        avaliacao = 1;
+        }}
+        
+        //ESTRELA 1
+        if (estrela == 1){ 
+        if (s1 == url + "images/star0.webp") {
+        document.getElementById("s1").src = "images/star1.png";
+        document.getElementById("s2").src = "images/star0.webp";
+        document.getElementById("s3").src = "images/star0.webp";
+        document.getElementById("s4").src = "images/star0.webp";
+        document.getElementById("s5").src = "images/star0.webp";
+        avaliacao = 1;
+        } else {
+        document.getElementById("s1").src = "images/star1.png";
+        document.getElementById("s2").src = "images/star0.webp";
+        document.getElementById("s3").src = "images/star0.webp";
+        document.getElementById("s4").src = "images/star0.webp";
+        document.getElementById("s5").src = "images/star0.webp";
+        avaliacao = 0;
+        }}
+        
+        document.getElementById('rating').innerHTML = avaliacao;
+        
+        }
+        </script>
+        
+        <script>
+            // quando o botão é clicado, abrir o modal
+            $("#btn-calendar").click(function() {
+            $("#modal-calendar").show();
+            });
+
+            // quando a 'x' do modal é clicada, fechar o modal
+            $(".close").click(function() {
+            $("#modal-calendar").hide();
+            });
+
+            // quando o usuário clica fora do modal, fechar o modal
+            $(window).click(function(event) {
+            if (event.target == $("#modal-calendar")[0]) {
+                $("#modal-calendar").hide();
+            }
+            });
+
+            // inicializar o datepicker
+            $("#datepicker").datepicker({
+            onSelect: function(dateText, inst) {
+                // quando uma data é selecionada, mostrar os horários disponíveis
+                $("#timeslots tbody").empty();
+                $("#timeslots").hide();
+                var availableTimeslots = getAvailableTimeslots(dateText);
+                if (availableTimeslots.length > 0) {
+                $.each(availableTimeslots, function(index, value) {
+                    $("#timeslots tbody").append("<tr><td>" + value + "</td><td><button class='btn-agendar'>Agendar</button></td></tr>");
+                });
+                $("#timeslots").show();
+                }
+            }
+            });
+
+            // função para obter os horários disponíveis para uma determinada data
+            function getAvailableTimeslots(date) {
+            // aqui você pode adicionar a lógica para retornar os horários disponíveis
+            // para a data selecionada, por exemplo, consultando um banco de dados ou
+            // lendo de um arquivo JSON
+            // neste exemplo, retornamos um array fixo com alguns horários disponíveis
+            var availableTimeslots = [
+                "09:00",
+                "10:00",
+                "11:00"
+            ];
+            return availableTimeslots;
+            }
+
+            // quando o usuário clica em "Agendar" em um horário disponível, fazer alguma ação
+            $(document).on("click", ".btn-agendar", function() {
+            var timeslot = $(this).closest("tr").find("td:first-child").text();
+            alert("Horário selecionado: " + timeslot);
+            });
+
+        </script>
+
+    <script>
+    $(function() {
+        $("#calendario").datepicker({
+            dateFormat: 'dd/mm/yy',
+            dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
+            dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+            dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+            monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+            monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
+        });
+    });
+    </script>
+
+    <script>
+        const agendarConsultaButton = document.getElementById('agendar-consulta');
+        const mensagemConsultaAgendada = document.getElementById('mensagem-consulta-agendada');
+
+        agendarConsultaButton.addEventListener('click', function() {
+        mensagemConsultaAgendada.style.display = 'block';
+
+        setTimeout(function() {
+            window.location.href = 'list.html';
+        }, 2000);
+        });
+    </script>
+    <script>
+        document.getElementById("user-icon").addEventListener("click", function () {
+		    var userMenu = document.getElementById("user-menu");
+		    userMenu.style.display = userMenu.style.display === "block" ? "none" : "block";
+		});
+		
+		document.getElementById("logout").addEventListener("click", function (e) {
+		    e.preventDefault();
+		    // Adicione sua lógica para sair do usuário aqui
+		});
+
+    </script>

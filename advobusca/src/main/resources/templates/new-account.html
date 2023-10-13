@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/Logo_atualizada_uni_branca.png">
+    <link rel="stylesheet" href="/css/new-account.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="new-account.js"></script>
+    <title>AdvoBusca</title>
+</head>
+<body>
+
+    <header>
+
+        <div class="class-header">
+
+            <div class="logo-class-header">
+                <a th:href=@{/cliente/home}>
+                    <img src="/images/Logo_atualizada_Right_branco.png" alt="">
+                </a>
+            </div>
+
+            <div class="item1-class-header">
+                <a href="">
+                    <h3>Nossos Valores</h3>
+                </a>
+            </div>
+
+            <div class="item2-class-header">
+                <a href="">
+                    <h3>Áreas</h3>
+                </a>
+            </div>
+
+            <div class="item3-class-header">
+                <a href="">
+                    <h3>Sobre nós</h3>
+                </a>
+            </div>
+
+            <div class="signup-class-header">
+                <a th:href=@{/cliente/cadastr}>
+                <button>Se cadastre</button>
+                </a>
+            </div>
+
+            <div class="login-class-header">
+                <a th:href=@{/cliente/login}>
+                <button>Entre</button>
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <div class="cadastro">
+
+            <div class="title-cadastro">
+                <h1>Crie sua conta!</h1>
+            </div>
+
+            <div class="form-cadastro">
+                <form onsubmit="validarFormulario()" th:action="@{/cliente/cadastrar}" th:object="${cliente}" method="post">
+
+                    <div class="form-up">
+
+                    <div class="nome">
+                        <h3>Nome</h3>
+                        <input type="text" id="name" th:field="*{nome}" >
+                    </div>
+
+                    <div class="CPF">
+                        <h3>CPF</h3>
+                        <input type="text" id="cpf" th:field="*{cpf}" >
+                    </div>
+
+                    <div class="RG">
+                        <h3>RG</h3>
+                        <input type="text" maxlength="14" th:field="*{rg}"  id="rg">
+                    </div>
+
+
+                    </div>
+
+
+                    <div class="form-down">
+
+                    <div class="Telefone">
+                        <h3>Telefone</h3>
+                        <input type="text" maxlength="14" th:field="*{telefone}"  id="telefone">
+                    </div>
+
+                    <div class="data-nasc">
+                        <h3>Data de nascimento</h3>
+                        <input type="date" th:field="*{dataNascimento}" id="data-nasc" >
+                    </div>
+
+                    <div class="email">
+                        <h3>Email</h3>
+                        <input type="text" th:field="*{email}"  id="email">
+                    </div>
+
+
+                    </div>
+
+
+                    <div class="form-down-down">
+	                    <div class="sexo">
+	                        <h3>Sexo</h3>
+	                        <select th:field="*{genero}">
+								<option value="0">Selecione</option>
+								<option th:each="genero : ${generos}" th:text="${genero}" th:value="${genero}"></option>
+							</select>
+	                    </div>
+	
+	                    <div class="senha">
+	                        <h3>Senha</h3>
+	                        <input type="password" id="senha" th:field="*{senha}">
+	                    </div>
+                    </div>
+                    <button class="botaoCadastro" type="submit" onclick="validarFormulario()">Cadastre</button>
+                </form>
+            </div>
+>
+
+            <a th:href="@{/cliente/login}"><h6>Já tem conta? Clique aqui!</h6></a>
+        </div>
+
+    </main>
+
+
+    </body>
+
+
+    <script>
+        $(document).ready(function(){
+          $('#telefone').mask('(00) 0000-0000');
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+        $('#rg').mask('AA.BBB.CCC-D', {
+            translation: {
+            'A': {pattern: /[[0-9]/},
+            'B': {pattern: /[0-9]/},
+            'C': {pattern: /[0-9]/},
+            'D': {pattern: /[0-9]/} 
+            }
+        });
+        });
+    </script>  
+
+    <script>
+        $(document).ready(function(){
+        $('#cpf').mask('000.000.000-00', {reverse: true});
+        });
+    </script>
+
+    <script>
+        function validarFormulario() {
+    var nome = document.getElementById("name").value;
+    var cpf = document.getElementById("cpf").value;
+    var rg = document.getElementById("rg").value;
+    var telefone = document.getElementById("telefone").value;
+    var nascimento = document.getElementById("data-nasc").value;
+    var email = document.getElementById("email").value;
+    var senha = document.getElementById("senha").value;
+
+    if (nome == "") {
+        alert("Por Favor, Digite seu Nome");
+        return false;
+    }
+    if (cpf == "") {
+        alert("Por Favor, Digite seu CPF");
+        return false;
+    }
+    if (rg == "") {
+        alert("Por Favor, Digite sua RG");
+        return false
+    }
+    if (telefone == "") {
+        alert("Por Favor, Digite seu telefone");
+        return false;
+    }
+    if (nascimento == "") {
+        alert("Por Favor, Digite sua data de nascimento");
+        return false;
+    }
+    if (email == "") {
+        alert("Por Favor, Digite seu Email");
+        return false;
+    }
+    if (senha == "") {
+        alert("Por Favor, Digite sua senha");
+        return false;
+    }
+
+    return true
+}
+    </script>
+
+    <script>
+        function validarFormulario() {
+        var input = document.getElementById("data-nasc").value;
+        var dataNascimento = new Date(input);
+        var idadeMinima = 18;
+        var dataAtual = new Date();
+        var anoMinimo = dataAtual.getFullYear() - idadeMinima;
+        var dataMinima = new Date(anoMinimo, dataAtual.getMonth(), dataAtual.getDate());
+        
+        if (dataNascimento > dataMinima) {
+            alert("Você precisa ter pelo menos " + idadeMinima + " anos para se cadastrar.");
+        }
+        }
+    </script>
+
+    </html>

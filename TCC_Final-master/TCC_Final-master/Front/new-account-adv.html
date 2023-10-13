@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </meta>
+    <link rel="icon" type="image/x-icon" href="/Front/images/Logo_atualizada_uni_branca.png">
+    <link rel="stylesheet" href="new-account-adv.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.mask.min.js"></script>
+    <title>AdvoBusca</title>
+</head>
+<body>
+
+    <header>
+
+        <div class="class-header">
+
+            <div class="logo-class-header">
+                <a href="/Front/home.html">
+                    <img src="images/Logo_atualizada_Right_branco.png" alt="">
+                </a>
+            </div>
+
+            <div class="item1-class-header">
+                <a href="">
+                    <h3>Nossos Valores</h3>
+                </a>
+            </div>
+
+            <div class="item2-class-header">
+                <a href="">
+                    <h3>Áreas</h3>
+                </a>
+            </div>
+
+            <div class="item3-class-header">
+                <a href="">
+                    <h3>Sobre nós</h3>
+                </a>
+            </div>
+
+            <div class="signup-class-header">
+                <a href="">
+                <button>Se cadastre</button>
+                </a>
+            </div>
+
+            <div class="login-class-header">
+                <a href="/Front/login.html">
+                <button>Entre</button>
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <div class="cadastro">
+
+            <div class="title-cadastro">
+                <h1>Crie sua conta de Advogado!</h1>
+            </div>
+
+            <div class="form-cadastro">
+                <form onsubmit="validarFormulario()">
+
+                    <div class="form-up">
+
+                    <div class="nome">
+                        <h3>Nome</h3>
+                        <input type="text" id="name" >
+                    </div>
+
+                    <div class="CPF">
+                        <h3>CPF</h3>
+                        <input type="text" id="cpf" >
+                    </div>
+
+                    <div class="RG">
+                        <h3>RG</h3>
+                        <input type="text" maxlength="14" id="rg">
+                    </div>
+
+
+                    </div>
+
+
+                    <div class="form-down">
+
+                    <div class="Telefone">
+                        <h3>Telefone</h3>
+                        <input type="text" maxlength="14" id="telefone">
+                    </div>
+
+                    <div class="data-nasc">
+                        <h3>Data de nascimento</h3>
+                        <input type="date" id="data-nasc" >
+                    </div>
+
+                    <div class="email">
+                        <h3>Email</h3>
+                        <input type="text" id="email">
+                    </div>
+
+
+                    </div>
+
+
+                    <div class="form-down-down">
+
+                    <div class="sexo">
+                        <h3>Sexo</h3>
+                        <input type="radio" id="masculino" name="sexo" value="masculino">
+		                <label for="masculino">Masculino</label><br>
+                        
+                        <input type="radio" id="feminino" name="sexo" value="feminino">
+                        <label for="feminino">Feminino</label><br>
+                        
+                        <input type="radio" id="outro" name="sexo" value="outro" >
+                        <label for="outro">Outro</label><br>
+                    </div>
+
+                    <div class="senha">
+                        <h3>Senha</h3>
+                        <input type="text" id="senha">
+                    </div>
+
+                    </div>
+
+
+                    <div class="forms-adv">
+
+
+                        <div class="forms-adv-up">
+
+                            <div class="colun-cod-perco">
+                                <div class="cod-oab">
+                                    <h3>Codigo OAB</h3>
+                                    <input type="text" id="cod-oab" maxlength="6">
+                                </div>
+
+                                <div class="preco">
+                                    <h3>Preço da consulta</h3>
+                                    <input type="text" id="valor" name="valor" data-inputmask="'alias': 'currency', 'prefix': 'R$ ', 'autoGroup': true, 'digits': 2, 'radixPoint': ',', 'groupSeparator': '.'">
+                                </div>
+                            </div>
+
+                                <div class="areas">
+
+                                    <h3>Areas de atuação</h3>
+                                    <div>
+                                    <label>Direito Civil<input type="checkbox" name="direito_civil" id="direito_civil" value="1"></label>
+                                    <label><input type="checkbox" name="direito_ambiental" id="direito_ambiental" value="1">Direito Ambiental</label>
+                                    </div>
+
+                                    <div>
+                                    <label>Direito Empresarial<input type="checkbox" name="direito_empresarial" id="direito_empresarial" value="1"></label>
+                                    <label><input type="checkbox" name="direito_digital" id="direito_digital" value="1">Direito Digital</label>
+                                    </div>
+
+                                    <div>
+                                    <label>Direito Tributário<input type="checkbox" name="direito_tributario" id="direito_tributario" value="1"></label>
+                                    <label><input type="checkbox" name="direito_trabalhista" id="direito_trabalhista" value="1">Direito Trabalhista</label>
+                                    </div>
+
+                                    <label>Direito do Consumidor<input type="checkbox" name="direito_consumidor" id="direito_consumidor" value="1"></label>
+                                    <label><input type="checkbox" name="direito_criminalista" id="direito_criminalista" value="1">Direito Criminalista</label>
+                                </div>
+                        </div>
+
+                        <div class="endereco">
+                            <h2>Endereço do escritorio</h2>
+                            <form>
+                                <div class="cep">
+                                    <label for="cep">CEP:</label>
+                                    <input type="text" name="cep" id="cep">
+                                    <br>
+                                </div>
+                                <div class="dados-endereco">
+                                    <label for="cidade" class="cidade">Cidade: </label>
+                                    <input type="text" name="cidade" id="cidade">
+                                    <br>
+                                    <label for="bairro" class="bairro">Bairro: </label>
+                                    <input type="text" name="bairro" id="bairro">
+                                    <br>
+                                    <label for="rua" class="rua">Rua: </label>
+                                    <input type="text" name="rua" id="rua">
+                                    <br>
+                                    <label for="numero" class="numero">Numero: </label>
+                                    <input type="text" name="numero" id="numero">
+                                </div>
+
+                                <div class="complementos">
+                                    <label for="complemento" class="complemento">Complemento: </label>
+                                    <input type="text" name="complemento" id="complemento">
+                
+                                    <label for="Ponto" class="ponto">Ponto de referencia: </label>
+                                    <input type="text" name="Ponto" id="Ponto">
+                                </div>
+                            </form>
+                        </div>
+
+                        
+                    </div>
+                </form>
+            </div>
+
+            <button class="botaoCadastro" type="button" onclick="validarFormulario()"><a href="/Front/home-adv.html" class="link-button">Cadantrar</a></button>
+
+            <a href="login.html"><h6>Já tem conta? Clique aqui!</h6></a>
+        </div>
+
+    </main>
+
+
+    </body>
+
+
+    <script>
+        $(document).ready(function(){
+          $('#telefone').mask('(00) 0000-0000');
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+        $('#rg').mask('AA.BBB.CCC-D', {
+            translation: {
+            'A': {pattern: /[[0-9]/},
+            'B': {pattern: /[0-9]/},
+            'C': {pattern: /[0-9]/},
+            'D': {pattern: /[0-9]/} 
+            }
+        });
+        });
+    </script>  
+
+    <script>
+        $(document).ready(function(){
+        $('#cpf').mask('000.000.000-00', {reverse: true});
+        });
+    </script>
+
+    <script>
+        function validarFormulario() {
+    var nome = document.getElementById("name").value;
+    var cpf = document.getElementById("cpf").value;
+    var rg = document.getElementById("rg").value;
+    var telefone = document.getElementById("telefone").value;
+    var nascimento = document.getElementById("data-nasc").value;
+    var email = document.getElementById("email").value;
+    var senha = document.getElementById("senha").value;
+    var valor = document.getElementById("valor").value;
+    var codOab = document.getElementById("cod-oab").value;
+    var numeroCasa = document.getElementById("numero").value;
+
+    if (nome == "") {
+        alert("Por Favor, Digite seu Nome");
+        return false;
+    }
+    if (cpf == "") {
+        alert("Por Favor, Digite seu CPF");
+        return false;
+    }
+    if (rg == "") {
+        alert("Por Favor, Digite sua RG");
+        return false
+    }
+    if (telefone == "") {
+        alert("Por Favor, Digite seu telefone");
+        return false;
+    }
+    if (nascimento == "") {
+        alert("Por Favor, Digite sua data de nascimento");
+        return false;
+    }
+    if (email == "") {
+        alert("Por Favor, Digite seu Email");
+        return false;
+    }
+    if (senha == "") {
+        alert("Por Favor, Digite sua senha");
+        return false;
+    }
+    if (valor == "") {
+        alert("Por Favor, Digite o valor de sua consulta:");
+        return false;
+    }
+    if (codOab == "") {
+        alert("Por Favor, Digite seu codigo OAB");
+        return false;
+    }
+
+    return true
+}
+    </script>
+
+    <script>
+        $(document).ready(function(){
+        $('#cod-oab').mask('AAAAAAA', {
+            translation: {
+            'A': {pattern: /[[0-9]/}
+            }
+        });
+        });
+    </script>
+
+    <script>
+    $(document).ready(function() {
+        $('#cep').blur(function() {
+        // remove tudo que não é número do CEP
+        var cep = $(this).val().replace(/\D/g, '');
+        if (cep.length != 8) {
+            return;
+        }
+        // faz a requisição à API ViaCEP
+        $.getJSON('https://viacep.com.br/ws/' + cep + '/json/', function(data) {
+            if (!("erro" in data)) {
+            // atualiza os campos do formulário com os dados da API
+            $('#cidade').val(data.localidade);
+            $('#bairro').val(data.bairro);
+            $('#rua').val(data.logradouro);
+            }
+        });
+        });
+    });
+   </script>
+
+   <script>
+        $(document).ready(function(){
+            $('#valor').inputmask();
+        });
+   </script>

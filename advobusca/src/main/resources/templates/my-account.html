@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/Logo_atualizada_uni_branca.png">
+    </meta>
+
+    <link rel="stylesheet" href="/css/my-account-adv.css">
+    <title>AdvoBusca</title>
+</head>
+
+<body>
+    <header>
+		<div th:if="${session.cliente != null}"> 
+    		<div th:replace="topMenu/topMenuLogado :: header"></div>
+    	</div>	
+    	<div th:if="${session.cliente == null}"> 
+    		<div th:replace="fragments/topMenudeslogado :: header"></div>
+    	</div>	
+    </header>
+
+	<form>
+	    <div class="foto-perfil">
+	        <h2>Dados Pessoais</h2>
+	        <img src="images/advogado-1.jpg">
+	    </div>
+	    <div class="edite-image">
+	        <button><a href="#">Editar</a> </button>
+	    </div>
+	    <div class="input-group">
+	        <div class="campo-top">
+	            <div class="input-box">
+	                <label for="name">Nome</label>
+	                <input id="name" type="text" name="name" th:value="${cliente.nome}" placeholder="Digite seu nome completo.">
+	            </div>
+	            <div class="input-box">
+	                <label for="rg">RG</label>
+	                <input id="rg" type="text" name="rg" th:value="${cliente.rg}" placeholder="Digite seu rg sem caracteres especiais">
+	            </div>
+	            <div class="input-box">
+	                <label for="cpf">CPF</label>
+	                <input id="cpf" type="text" name="cpf" th:value="${cliente.cpf}" placeholder="XXX.XXX.XXX-XX">
+	            </div>
+	        </div>
+	        <div class="campo-meio">
+	            <div class="input-box">
+	                <label for="email">Email</label>
+	                <input id="email" type="text" name="email" th:value="${cliente.email}" placeholder="example123@example.com">
+	            </div>
+	            <div class="input-box">
+	                <label for="password">Senha</label>
+	                <input id="password" type="password" name="password" th:value="${cliente.senha}" placeholder="****************">
+	            </div>
+	            <div class="input-box">
+	                <label for="number">Celular</label>
+	                <input id="number" type="tel" name="number" th:value="${cliente.telefone}" placeholder="(xx) xxxx-xxxx">
+	            </div>
+	        </div>
+	    </div>     
+	</form>
+            
+        <footer>
+            <br>
+            <div class="container">
+                <ul>
+                    <div class="imagem-logo-footer">
+                        <img src="images/Logo_atualizada_Right_branco.png" alt="imagem-logo-footer">
+                    </div>
+                </ul>
+                <!--fim da primeira ul-->
+                <ul>
+                    <h3>Acesse <br> Aqui</h3>
+                    <a href="">Areas</a><br>
+                    <a href="">Cadastre-se</a><br>
+                    <a href="">Login</a><br>
+                </ul>
+                <!--fim da segunda ul-->
+                <ul>
+                    <h3>Informações <br> Corporativas</h3>
+                    <a href="">Home</a><br>
+                    <a href="">Sobre nós</a><br>
+                    <a href="">Valores</a><br>
+                </ul>
+                <!--fim da terceira ul-->
+                <ul class="icons">
+                    <h3>Siga-nos</h3>
+                    <img id="imgFacebook" src="images/107140_gray_circle_facebook_icon.png" alt="">
+                    <img id="imgInstagram" src="images/107138_gray_circle_instagram_icon.png" alt="">
+                    <img id="imgTwitter" src="images/107135_gray_twitter_circle_icon.png" alt="">
+                </ul>
+                <!--fim da quarta ul-->
+            </div>
+        </footer>
+</body>
